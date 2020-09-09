@@ -1,0 +1,23 @@
+{
+	"Summary": 
+	[
+		"Ingests Censys ASM Platform logbook data into Splunk via HEC."
+	],
+
+	"Options":
+	[
+		{
+			"Workflow": "ingestLogbook",
+			"Description": "Command to ingest logbook data."
+		}
+
+	],
+
+	"Footer":
+	[
+		""
+	]
+
+}
+
+

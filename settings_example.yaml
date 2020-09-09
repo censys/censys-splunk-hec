@@ -1,0 +1,25 @@
+---
+
+censys:
+  authentication:
+    saas_api_key: your-censys-saas-api-key
+
+  run:
+    - command: ingestLogbook
+      interval: 120
+      startup: true
+      options:
+        idFrom: 
+        filter: 
+        enrichHost: 
+        enrichCert: 
+
+
+splunk:
+  schema: https
+  host: '127.0.0.1'
+  port: '8088'
+  source: censys
+  type: _json
+  default_index: main
+  hec_token: your-splunk-hec-token
