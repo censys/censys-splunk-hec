@@ -2,16 +2,23 @@
 
 censys:
   authentication:
+    # Find this key on app.censys.io/admin
     saas_api_key: your-censys-saas-api-key
 
   run:
     - command: ingestLogbook
+    # Interval for commnad to run in minutes    
       interval: 120
+    # If true, runs immediately on startup, if false, waits for the interval set above
       startup: true
       options:
+        # The event ID to begin pulling events from. Only used on initial startup
         idFrom: 
+        # Event types to pull from the logbook. If empty, all event types will be retrieved
         filter: 
-        enrichHost: 
+        # If true, adds host information from the Censys asset API whenever ipaddress field is present in an event
+        enrichHost:
+        # If true, adds certificate information from the Censys asset API whenever sha256 field is present in an event
         enrichCert: 
 
 

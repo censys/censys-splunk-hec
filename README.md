@@ -35,3 +35,6 @@ Step 4: Build a container for the Censys Splunk HEC Integration:
  - ./censys-splunk-hec.sh run
 
 
+## Setup Details
+
+See the docs folder for setup details.

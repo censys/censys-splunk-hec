@@ -1,0 +1,16 @@
+# Censys Splunk HTTP Event Collector Integration Maintenance
+
+The Censys Splunk HEC integration sits between the Censys Attack Surface Management platform and your Splunk instance.
+
+## Persisting Data
+
+The integration is designed to run in a Docker container. Docker containers are ephemeral, meaning that any and all data is gone when the container is removed.
+
+The integration must store the most recent Censys logbook event ID that it processed when querying the API periodically so as not to reprocess events already seen.
+In order to ensure this ID is not lost if the container is removed, a directory is created and mounted on the docker host: `$HOME/censys/storage/splunk-hec`.
+
+The integration writes to the `lastId.json` file in the following path: `$HOME/censys/storage/splunk-hec/storage/tasks/ingestLogbook/input/`.
+
+## Troubleshooting
+
+If the integration ceases working, ensure that your Censys platform API key and Splunk HEC tokens are still valid.
